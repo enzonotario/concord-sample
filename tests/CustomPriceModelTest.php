@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Modules\Price\Models\PriceList;
 use Hawk\Price\Models\PriceListProxy;
 
 class CustomPriceModelTest extends TestCase
@@ -9,7 +10,7 @@ class CustomPriceModelTest extends TestCase
 
     public function test()
     {
-        dd(PriceListProxy::modelClass());
+        $this->assertInstanceOf(PriceList::class, PriceListProxy::modelClass());
     }
 
 }
