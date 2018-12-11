@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        app('concord')->registerModel(
+            \Hawk\Price\Contracts\PriceList::class, \App\Modules\Price\Models\PriceList::class
+        );
     }
 
     /**
