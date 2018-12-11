@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\Modules\Price\Models\PriceList;
 use Hawk\Price\Models\PriceListProxy;
 
 class CustomPriceModelTest extends TestCase
@@ -11,6 +12,7 @@ class CustomPriceModelTest extends TestCase
     {
         $model = PriceListProxy::modelClass();
         $instance = new $model;
+        $this->assertEquals(PriceList::class, $model);
         $this->assertEquals('customTable', $instance->getTable());
     }
 
